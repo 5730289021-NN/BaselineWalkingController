@@ -64,12 +64,12 @@ The recommended way to build this project is to use mc-rtc-superbuild along with
 git clone --recursive https://github.com/mc-rtc/mc-rtc-superbuild.git
 cd extensions
 git clone --recursive https://github.com/mc-rtc/superbuild-extensions.git
-echo "set(EXTENSIONS_DIR ${CMAKE_CURRENT_LIST_DIR}/superbuild-extensions)" > local.cmake
+echo 'set(EXTENSIONS_DIR ${CMAKE_CURRENT_LIST_DIR}/superbuild-extensions)' > local.cmake
 # Install baseline walking controller and its dependencies
-echo "include(${EXTENSIONS_DIR}/controllers/BaseLineWalkingController.cmake)" >> local.cmake
+echo 'include(${EXTENSIONS_DIR}/controllers/BaseLineWalkingController.cmake)' >> local.cmake
 # For dynamics simulation with MuJoCo
-echo "include(${EXTENSIONS_DIR}/simulation/MuJoCo.cmake)" >> local.cmake
-echo "include(${EXTENSIONS_DIR}/gui/mc_rtc-magnum.cmake)" >> local.cmake
+echo 'include(${EXTENSIONS_DIR}/simulation/MuJoCo.cmake)' >> local.cmake
+echo 'include(${EXTENSIONS_DIR}/gui/mc_rtc-magnum.cmake)' >> local.cmake
 cd ..
 # Configure the superbuild and install all required system dependencies
 cmake --preset relwithdebinfo
